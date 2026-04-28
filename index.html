@@ -129,12 +129,14 @@
     #comunidad { padding: 88px 24px; background: var(--dark); text-align: center; border-top: 1px solid rgba(60,184,74,0.12); }
     #comunidad .section-title { color: white; }
     #comunidad .section-sub { color: rgba(255,255,255,0.45); }
-    .comunidad-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 340px; gap: 12px; max-width: 1000px; margin: 0 auto; }
-    .comunidad-grid .foto-grande { grid-column: span 2; }
+    .comunidad-hero { border-radius: 18px; overflow: hidden; position: relative; height: 380px; max-width: 1000px; margin: 0 auto 12px; }
+    .comunidad-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; transition: transform 0.5s ease; }
+    .comunidad-hero:hover img { transform: scale(1.03); }
+    .comunidad-grid { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: 300px; gap: 12px; max-width: 1000px; margin: 0 auto; }
     .comunidad-foto { border-radius: 18px; overflow: hidden; position: relative; }
-    .comunidad-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-    .comunidad-foto:hover img { transform: scale(1.04); }
-    .foto-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,31,16,0.5) 0%, transparent 50%); border-radius: 18px; }
+    .comunidad-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.5s ease; }
+    .comunidad-foto:hover img { transform: scale(1.05); }
+    .foto-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,31,16,0.45) 0%, transparent 55%); }
 
     /* GALERÍA */
     #galeria {
@@ -197,8 +199,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .comunidad-grid { grid-template-columns: 1fr; grid-template-rows: 260px 220px 220px; }
-      .comunidad-grid .foto-grande { grid-column: span 1; }
+      .comunidad-hero { height: 240px; }
+      .comunidad-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: 220px 220px; }
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       .hero-stats { gap: 20px; }
@@ -323,19 +325,25 @@
   <div class="section-tag">En acción</div>
   <h2 class="section-title">Nuestra comunidad</h2>
   <p class="section-sub">Personas reales, resultados reales. Esto es Baüm.</p>
+  <div class="comunidad-hero">
+    <img src="assets/gente-grupo.jpg" alt="Comunidad Baüm Centro de Entrenamiento">
+    <div class="foto-overlay"></div>
+  </div>
   <div class="comunidad-grid">
-    <div class="comunidad-foto foto-grande">
-      <img src="assets/gente-3.jpg" alt="Clase grupal en Baüm">
+    <div class="comunidad-foto">
+      <img src="assets/gente-1.jpg" alt="Entrenamiento Baüm">
       <div class="foto-overlay"></div>
     </div>
     <div class="comunidad-foto">
-      <img src="assets/gente-1.jpg" alt="Entrenamiento en Baüm">
+      <img src="assets/gente-2.jpg" alt="Battle ropes Baüm">
       <div class="foto-overlay"></div>
     </div>
-  </div>
-  <div style="margin-top:12px;max-width:1000px;margin-left:auto;margin-right:auto;">
-    <div class="comunidad-foto" style="height:300px;">
-      <img src="assets/gente-2.jpg" alt="ZumBaüm clase grupal outdoor" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;border-radius:18px;transition:transform 0.5s ease;">
+    <div class="comunidad-foto">
+      <img src="assets/gente-3.jpg" alt="Pesas Baüm">
+      <div class="foto-overlay"></div>
+    </div>
+    <div class="comunidad-foto">
+      <img src="assets/gente-4.jpg" alt="Funcional Baüm">
       <div class="foto-overlay"></div>
     </div>
   </div>
